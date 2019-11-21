@@ -136,7 +136,10 @@
     <Content Include="Content\images\black-sketches-of-musical-instruments-on-white-background-elaine-plesser.jpg" />
     <Content Include="Content\images\clarinet.jpg" />
     <Content Include="Content\images\flute.jpg" />
+    <Content Include="Content\images\founder.jpg" />
     <Content Include="Content\images\instraments.jpg" />
+    <Content Include="Content\images\mouserate.jpg" />
+    <Content Include="Content\images\musicnotes.jpg" />
     <Content Include="Content\images\saxophone.jpg" />
     <Content Include="Content\images\trombone.jpg" />
     <Content Include="Content\images\trumpet.jpg" />
