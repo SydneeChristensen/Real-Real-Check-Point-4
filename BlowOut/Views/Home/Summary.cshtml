@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Order Summary";
+}
+
+
+
+
+<!--This should display a message thanking the customer by name for the order/rental and displaying the "order/rental"
+    info including the orderID (use the client ID for this for now), instrument info, type (new or used),
+    instrument description and image, the monthly price, and the total amount paid after 18 months.-->
+
+<h3>Thank you for you order, @ViewBag.Client.ClientFirstName. </h3><br />
+<h4>Order Summary</h4>
+<hr />
+<!--
+<img src="~/Content/images/@ViewBag.Instrument.Desription
+.jpg" style="max-width: 100px" /><br />
+Client Number: @ViewBag.Client.ClientID <br />
+Instrument: @ViewBag.Instrument.Type @ViewBag.space @ViewBag.Instrument.Desription <br />
+
+Price: $@ViewBag.Instrument.Price <br />
+18 month total: $@ViewBag.months18 <br />-->
+
+<table>
+
+    <tr>
+        <td>
+            <img src="~/Content/images/@ViewBag.Instrument.Desription
+.jpg" style="max-width: 100px" />
+        </td>
+        <td>
+            Client Number @ViewBag.Client.ClientID <br />
+            @ViewBag.Instrument.Type @ViewBag.space @ViewBag.Instrument.Desription
+            <br />Monthly Price: $@ViewBag.Instrument.Price
+            <br />18 month total: $@ViewBag.months18
+
+        </td>
+
+
+</table>

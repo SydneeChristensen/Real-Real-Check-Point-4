@@ -1,10 +1,11 @@
-﻿
+﻿@model IEnumerable<BlowOut.Models.Instrument>
+
 @{
     ViewBag.Title = "Rental";
 }
 
 <h2>Rental</h2>
-
+<!--
 <table style="width:100%">
     <tr>
         <td>
@@ -41,4 +42,33 @@
             </a>
         </td>
     </tr>
+</table>
+    -->
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+
+        @item.Type
+        @ViewBag.space
+        @item.Desription
+
+        <br />
+        <!--
+                @Html.ActionLink(item.Desription, "Create", new { id = item.InstrumentID })
+                <br />
+                <img src="~/Content/images/@item.Desription
+        .jpg" style="max-width: 100px" />
+                <hr />-->
+
+        <a href="@Url.Action("Create", new { id = item.InstrumentID } )">
+            <img src="~/Content/images/@item.Desription
+.jpg" style="max-width: 100px" />
+        </a>
+        <hr />
+    }
 </table>
