@@ -54,6 +54,8 @@
             @item.Type
             @ViewBag.space
             @item.Desription
+            @ViewBag.space
+            $@item.Price
 
             <br />
             <!--
@@ -61,13 +63,13 @@
             <br />
             <img src="~/Content/images/@item.Desription
     .jpg" style="max-width: 100px" />
-            <hr />-->
+            -->
 
             <a href="@Url.Action("Create", new { id = item.InstrumentID } )">
                 <img src="~/Content/images/@item.Desription
 .jpg" style="max-width: 100px" />
             </a>
- 
+
         </td>
     </tr>
     }
