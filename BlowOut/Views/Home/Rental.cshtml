@@ -49,23 +49,26 @@
 <table class="table">
     @foreach (var item in Model)
     {
+    <tr>
+        <td>
+            @item.Type
+            @ViewBag.space
+            @item.Desription
 
-        @item.Type
-        @ViewBag.space
-        @item.Desription
-
-        <br />
-        <!--
-                @Html.ActionLink(item.Desription, "Create", new { id = item.InstrumentID })
-                <br />
-                <img src="~/Content/images/@item.Desription
-        .jpg" style="max-width: 100px" />
-                <hr />-->
-
-        <a href="@Url.Action("Create", new { id = item.InstrumentID } )">
+            <br />
+            <!--
+            @Html.ActionLink(item.Desription, "Create", new { id = item.InstrumentID })
+            <br />
             <img src="~/Content/images/@item.Desription
+    .jpg" style="max-width: 100px" />
+            <hr />-->
+
+            <a href="@Url.Action("Create", new { id = item.InstrumentID } )">
+                <img src="~/Content/images/@item.Desription
 .jpg" style="max-width: 100px" />
-        </a>
-        <hr />
+            </a>
+ 
+        </td>
+    </tr>
     }
 </table>
