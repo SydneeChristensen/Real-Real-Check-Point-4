@@ -130,6 +130,7 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstrumentClientsController.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="DAL\Instrument_RentalsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,6 +138,7 @@
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Instrument.cs" />
+    <Compile Include="Models\InstrumentClients.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +207,7 @@
     <Content Include="Views\Instruments\Index.cshtml" />
     <Content Include="Views\Home\Summary.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\InstrumentClients\UpdateData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

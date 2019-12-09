@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BlowOut.Models.InstrumentClients>
+
+
+@{
+
+    ViewBag.Title = "UpdateData";
+}
+
+<h2>UpdateData</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.ClientFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.ClientLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.client.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.Phone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.ClientFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.ClientLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.Zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.Phone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Clients.ClientID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Clients.ClientID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.client.ClientID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
