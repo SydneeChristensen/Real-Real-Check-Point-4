@@ -14,7 +14,7 @@ namespace BlowOut.Controllers
     {
         private Instrument_RentalsContext db = new Instrument_RentalsContext();
 
-        [Authorize]
+        
         public ActionResult Index()
         {
             return View();
@@ -85,29 +85,6 @@ namespace BlowOut.Controllers
             ViewBag.space = " ";
             return View(db.Instruments.ToList());
         }
-        // GET: Home
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Login(FormCollection form, bool rememberMe = false)
-        {
-            String email = form["Email address"].ToString();
-            String password = form["Password"].ToString();
-
-            if (string.Equals(email, "greg@test.com") && (string.Equals(password, "greg")))
-            {
-                FormsAuthentication.SetAuthCookie(email, rememberMe);
-
-                return RedirectToAction("Index", "Home");
-
-            }
-            else
-            {
-                return View();
-            }
+ 
         }
     }
-}
