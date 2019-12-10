@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using BlowOut.DAL;
 using BlowOut.Models;
 
@@ -13,6 +14,7 @@ namespace BlowOut.Controllers
     {
         private Instrument_RentalsContext db = new Instrument_RentalsContext();
 
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -83,101 +85,29 @@ namespace BlowOut.Controllers
             ViewBag.space = " ";
             return View(db.Instruments.ToList());
         }
-
-        public ActionResult Trumpet()
+        // GET: Home
+        public ActionResult Login()
         {
             return View();
         }
 
-        public ActionResult Trombone()
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
-            return View();
-        }
+            String email = form["Email address"].ToString();
+            String password = form["Password"].ToString();
 
-        public ActionResult Tuba()
-        {
-            return View();
-        }
+            if (string.Equals(email, "greg@test.com") && (string.Equals(password, "greg")))
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
 
-        public ActionResult Flute()
-        {
-            return View();
-        }
+                return RedirectToAction("Index", "Home");
 
-        public ActionResult Saxophone()
-        {
-            return View();
-        }
-
-        public ActionResult Clarinet()
-        {
-            return View();
-        }
-        public ActionResult TrumpetNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult TrumpetUsed()
-        {
-
-            return View();
-        }
-        public ActionResult FluteNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult FluteUsed()
-        {
-
-            return View();
-        }
-        public ActionResult ClarinetNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult ClarinetUsed()
-        {
-
-            return View();
-        }
-        public ActionResult SaxophoneNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult SaxophoneUsed()
-        {
-
-            return View();
-        }
-        public ActionResult TrombonetNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult TromboneUsed()
-        {
-
-            return View();
-        }
-        public ActionResult TubaNew()
-        {
-
-            return View();
-        }
-
-        public ActionResult TubaUsed()
-        {
-
-            return View();
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
