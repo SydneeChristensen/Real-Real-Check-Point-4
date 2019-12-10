@@ -111,7 +111,10 @@ namespace BlowOut.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Instrument instrument = db.Instruments.Find(id);
-            db.Instruments.Remove(instrument);
+            // db.Instruments.Remove(instrument);
+            db.Instruments.Single(u => u.ClientID == id).ClientID = null;
+            //db.Users.Single(u => u.Id == id).FirstName = model.FirstName;
+            //instrument.ClientID = null;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
