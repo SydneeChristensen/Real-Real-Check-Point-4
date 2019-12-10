@@ -9,8 +9,11 @@ namespace BlowOut.Models
 {
     public class InstrumentClients
     {
-        public IEnumerable<Instrument> Instruments{ get; set; }
-        public IEnumerable<Client> Clients { get; set; }
+        //public IEnumerable<Instrument> Instruments{ get; set; }
+        //public IEnumerable<Client> Clients { get; set; }
+        public Instrument instrument { get; set; }
+        public Client client { get; set; }
+
     }
 }
 

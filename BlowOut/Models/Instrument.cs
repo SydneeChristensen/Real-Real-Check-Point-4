@@ -24,6 +24,6 @@ namespace BlowOut.Models
         public int Price { get; set; }
 
         [Display(Name = "Client ID")]
-        public int ClientID { get; set; }
+        public int? ClientID { get; set; }
     }
 }
