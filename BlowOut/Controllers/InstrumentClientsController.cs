@@ -12,14 +12,29 @@ namespace BlowOut.Controllers
     public class InstrumentClientsController : Controller
     {
          private Instrument_RentalsContext db = new Instrument_RentalsContext();
+     
 
         // GET: InstrumentClients
         public ActionResult UpdateData(string sEmail)
         {
-            var model = new InstrumentClients();
-            model.Instruments = db.Instruments.ToList();
-            model.Clients = db.Clients.ToList();
-            return View(model);
+            List<InstrumentClients> orders = new List<InstrumentClients>();
+            foreach(Instrument IC in db.Instruments)
+            {
+                Instrument myInstrument = db.Instruments.Find(IC.ClientID);
+                Client myClient;
+                if (IC.ClientID != null)
+                {
+                    myClient = db.Clients.Find(IC.ClientID);
+                }
+                else
+                {
+                    myClient = new Client() { ClientFirstName = "N/A", ClientLastName = "N/A", Email = "N/A" };
+                }
+                InstrumentClients model = new InstrumentClients() { client = myClient, instrument = myInstrument };
+                orders.Add(model);
+            }
+
+            return View(orders);
         }
 
 

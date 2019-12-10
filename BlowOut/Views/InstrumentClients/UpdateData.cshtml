@@ -10,65 +10,83 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.ClientFirstName)
+            @Html.DisplayNameFor(model => model.instrument.Desription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.ClientLastName)
+            @Html.DisplayNameFor(model => model.instrument.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instrument.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.client.ClientFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.client.ClientLastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.client.Address)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.City)
+            @Html.DisplayNameFor(model => model.client.City)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.State)
+            @Html.DisplayNameFor(model => model.client.State)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.Zip)
+            @Html.DisplayNameFor(model => model.client.Zip)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.Email)
+            @Html.DisplayNameFor(model => model.client.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clients.Phone)
+            @Html.DisplayNameFor(model => model.client.Phone)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.ClientFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.ClientLastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.Zip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clients.Phone)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Clients.ClientID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Clients.ClientID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.client.ClientID })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.instrument.Desription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instrument.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instrument.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.ClientFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.ClientLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.client.ClientID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.client.ClientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.client.ClientID })
+        </td>
+    </tr>
     }
 
 </table>
