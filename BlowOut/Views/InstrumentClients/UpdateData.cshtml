@@ -9,6 +9,7 @@
 <h2>UpdateData</h2>
 <table class="table">
     <tr>
+
         <th>
             @Html.DisplayNameFor(model => model.instrument.Desription)
         </th>
@@ -18,13 +19,14 @@
         <th>
             @Html.DisplayNameFor(model => model.instrument.Price)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.client.ClientFirstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.client.ClientLastName)
         </th>
-    
+
         <th>
             @Html.DisplayNameFor(model => model.client.Email)
         </th>
@@ -37,6 +39,7 @@
     @foreach (var item in Model)
     {
     <tr>
+
         <td>
             @Html.DisplayFor(modelItem => item.instrument.Desription)
         </td>
@@ -46,6 +49,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.instrument.Price)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.client.ClientFirstName)
         </td>
@@ -59,8 +63,8 @@
             @Html.DisplayFor(modelItem => item.client.Phone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit","Clients", new { id = item.instrument.ClientID },null) |
-            @Html.ActionLink("Delete", "Delete","Instruments", new { id = item.instrument.ClientID },null)
+            @Html.ActionLink("Edit", "Edit", "Clients", new { id = item.client.ClientID }, null) |
+            @Html.ActionLink("Delete", "Delete", "Instruments", new { id = item.instrument.InstrumentID }, null)
         </td>
     </tr>
     }

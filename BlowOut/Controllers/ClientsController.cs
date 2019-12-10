@@ -85,7 +85,7 @@ namespace BlowOut.Controllers
             {
                 db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("UpdateData","InstrumentClients");
             }
             return View(client);
         }

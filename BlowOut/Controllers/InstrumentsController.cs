@@ -116,7 +116,7 @@ namespace BlowOut.Controllers
             //db.Users.Single(u => u.Id == id).FirstName = model.FirstName;
             //instrument.ClientID = null;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("UpdateData","InstrumentClients");
         }
 
         protected override void Dispose(bool disposing)
