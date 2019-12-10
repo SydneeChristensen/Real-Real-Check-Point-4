@@ -3,7 +3,7 @@
 
 @{
 
-    ViewBag.Title = "UpdateData";
+    ViewBag.Title = "Update Data";
 }
 
 <h2>UpdateData</h2>
@@ -24,18 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.client.ClientLastName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.client.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.client.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.client.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.client.Zip)
-        </th>
+    
         <th>
             @Html.DisplayNameFor(model => model.client.Email)
         </th>
@@ -62,18 +51,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.client.ClientLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.client.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.client.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.client.State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.client.Zip)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.client.Email)

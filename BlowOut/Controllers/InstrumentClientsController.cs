@@ -25,13 +25,14 @@ namespace BlowOut.Controllers
                 if (IC.ClientID != null)
                 {
                     myClient = db.Clients.Find(IC.ClientID);
+                    InstrumentClients model = new InstrumentClients() { client = myClient, instrument = myInstrument };
+                    orders.Add(model);
                 }
-                else
-                {
-                    myClient = new Client() { ClientFirstName = "N/A", ClientLastName = "N/A", Email = "N/A" };
-                }
-                InstrumentClients model = new InstrumentClients() { client = myClient, instrument = myInstrument };
-                orders.Add(model);
+               // else
+                //{
+                  //  myClient = new Client() { ClientFirstName = "N/A", ClientLastName = "N/A", Email = "N/A" };
+                //}
+
             }
 
             return View(orders);
