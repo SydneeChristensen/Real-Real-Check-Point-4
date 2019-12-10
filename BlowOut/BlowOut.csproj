@@ -208,7 +208,7 @@
     <Content Include="Views\Home\Summary.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\InstrumentClients\UpdateData.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\InstrumentClients\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

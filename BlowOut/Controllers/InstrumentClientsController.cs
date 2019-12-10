@@ -15,6 +15,8 @@ namespace BlowOut.Controllers
      
 
         // GET: InstrumentClients
+        
+       [Authorize]
         public ActionResult UpdateData(string sEmail)
         {
             List<InstrumentClients> orders = new List<InstrumentClients>();
@@ -38,21 +40,49 @@ namespace BlowOut.Controllers
             return View(orders);
         }
 
+        // GET: Home
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
             String email = form["Email address"].ToString();
             String password = form["Password"].ToString();
-            /*
-            var currentUser = db.Database.SqlQuery<InstrumentClients>(
-            "Select * " +
-            "FROM Users " +
-            "WHERE UserID = '" + "Missouri" + "' AND " +
-            "UserPassword = '" + "ShowMe" + "'");
-            */
+
+            if (string.Equals(email, "Missouri") && (string.Equals(password, "ShowMe")))
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+
+                return RedirectToAction("UpdateData", "InstrumentClients");
+
+            }
+            else
+            {
+                return View();
+            }
+    
+
+     /*   [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String email = form["Email address"].ToString();
+            String password = form["Password"].ToString();
+            
+            //var currentUser = db.Database.SqlQuery<InstrumentClients>(
+            //"Select * " +
+            //"FROM Users " +
+           // "WHERE UserID = '" + "Missouri" + "' AND " +
+           // "UserPassword = '" + "ShowMe" + "'");
+
+
+            
             if (email == "Missouri" && password == "ShowMe")
             //if (currentUser.Count() > 0)
+
+
             {
                 FormsAuthentication.SetAuthCookie(email, rememberMe);
                 return RedirectToAction("UpdateData", "InstrumentClients", new { userlogin = email });
@@ -61,6 +91,7 @@ namespace BlowOut.Controllers
             {
                 return View();
             }
+            */
         }
     }
 }
